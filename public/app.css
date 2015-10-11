@@ -109,3 +109,7 @@ a.md-button.md-primary, .md-button.md-primary {
 md-switch {
     justify-content : center;
 }
+
+.comments {
+    height: 900px;
+}

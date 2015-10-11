@@ -6,16 +6,19 @@
       </span>
     </md-whiteframe>
 
-    <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
-      <span>
+    <md-whiteframe class="md-whiteframe-24dp" flex="40" layout="column" layout-align="center"  >
+     
+      <md-content flex layout-padding > 
+        <div class="comments">
+          <div ng-repeat="comment in pic.image.comments track by comment.id">
+               
+               <div><md-button > By {{comment.userName}}</md-button></div>
+               <div>{{comment.text}}</div>
+          </div>
+        </div>
+      </md-content>
 
-      <div ng-repeat="comment in pic.image.comments track by comment.id">
-           
-           <div><md-button > By {{comment.userName}}</md-button></div>
-           <div>{{comment.text}}</div>
-      </div>
-
-      <form layout="column"   style="margin-top : 200px;">
+      <form layout="column">
          <md-input-container>
            <md-icon md-svg-icon="communication:ic_message_24px"></md-icon>
            <input type="textarea" ng-model="pic.comment.text"
@@ -29,7 +32,7 @@
 
       </form>
         
-      </span>
+      
     </md-whiteframe>
   </div>
 </md-content>
