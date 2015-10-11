@@ -1,0 +1,84 @@
+<div ng-cloak flex="80">
+  <md-content class="md-padding" flex="80">
+    <md-tabs md-dynamic-height md-border-bottom>
+      
+      <md-tab label="Members">
+        <md-content layout="row" layout-align="center" flex="80">
+          <span flex></span>
+          <md-whiteframe layout="column" flex="80" style="margin-top : 80px;">
+            
+            <h1>{{fv.family.name}}</h1>
+
+            <div ng-repeat="user in fv.members track by user._id">
+              <md-card>
+                <img ng-src="{{user.profile.profilePhoto}}" class="md-card-image" alt="Washed Out">
+                <md-card-content>
+                  <h2 class="md-title">{{user.profile.name}}</h2>
+                  <p>
+                    {{user.profile.about}}
+                  </p>
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                  <md-button ng-show="{{fv.isOwner()}}" ng-click="fv.remove(user._id)">Remove</md-button>
+                </div>
+              </md-card>
+            </div>
+
+
+            <div ng-show="fv.error" class="md-warn">
+              <small>{{ fv.error }}</small>
+            </div>
+            <form  ng-show="{{fv.isOwner()}}" layout="column"   style="margin-top : 20px;">
+              <md-input-container>
+                <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
+                <input type="email" ng-model="fv.member.email"
+                       placeholder="Member Email" aria-label="Memeber Email"/>
+              </md-input-container>
+
+              
+              <md-button class="md-raised md-primary"
+                         ng-click="fv.add()">Add Member
+              </md-button>
+
+            </form>
+
+            
+          </md-whiteframe>
+          <span flex></span>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Pets">
+        <md-content layout="row" layout-align="center" flex="80">
+          <span flex></span>
+          <md-whiteframe layout="column" flex="80" style="margin-top : 80px;">
+            
+            <h1>{{fv.family.name}} Pets</h1>
+
+            <div ng-repeat="pet in fv.pets track by pet._id">
+              <md-card>
+                <img ng-src="{{pet.profile.profilePhoto}}" class="md-card-image" alt="Washed Out">
+                <md-card-content>
+                  <h2 class="md-title">{{pet.profile.name}}</h2>
+                  
+                </md-card-content>
+                <div class="md-actions" layout="row" layout-align="end center">
+                  <md-button href="/pet/{{pet._id}}">Profile</md-button>
+                </div>
+              </md-card>
+            </div>
+
+
+            
+
+            
+          </md-whiteframe>
+          <span flex></span>
+        </md-content>
+      </md-tab>
+
+
+    </md-tabs>
+  </md-content>
+</div>
+

@@ -1,0 +1,74 @@
+md-toolbar.md-menu-toolbar {
+    color: #fff;
+    background-color: #BFA6BF;
+}
+  
+
+ md-content {
+    background-color: #DACDE8;
+}
+
+.md-subheader {
+    color: white;
+    background-color: #3F51B5;
+}
+
+
+md-menu-content {
+    background-color: #DACDE8;
+}
+
+md-sidenav {
+    position: absolute;
+    flex-direction: column;
+    z-index: 60;
+    width: 304px;
+    min-width: 304px;
+    max-width: 304px;
+    bottom: 0px;
+    background-color:#DACDE8;
+    overflow: auto;
+}
+
+md-toolbar:not(.md-menu-toolbar) {
+    color: rgba(255, 255, 255, 0.87);
+    background-color: #4A004A;
+}
+
+md-toolbar.md-menu-toolbar md-toolbar-filler {
+    background-color: #4A004A;
+    color: rgba(255, 255, 255, 0.87);
+}
+
+a.md-button.md-primary, .md-button.md-primary {
+    color: #4A004A;
+}
+
+.md-button {
+    border-radius: 3px;
+    color: #4A004A;
+    -moz-user-select: none;
+    position: relative;
+    outline: medium none;
+    border: 0px none;
+    display: inline-block;
+    align-items: center;
+    padding: 0px 6px;
+    margin: 6px 8px;
+    line-height: 36px;
+    min-height: 36px;
+    background: none repeat scroll 0% 0% transparent;
+    white-space: nowrap;
+    min-width: 88px;
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: 500;
+    font-size: 14px;
+    font-style: inherit;
+    font-variant: inherit;
+    font-family: inherit;
+    text-decoration: none;
+    cursor: pointer;
+    overflow: hidden;
+    transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s, background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
+}

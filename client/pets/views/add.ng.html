@@ -1,0 +1,44 @@
+<md-content layout="row" layout-align="center" flex="80">
+  <span flex></span>
+  <md-whiteframe layout="column" flex="80" style="margin-top : 80px;">
+    
+    <div ng-show="ptc.error" class="md-warn">
+      <small>{{ ptc.error }}</small>
+    </div>
+    <form layout="column"   style="margin-top : 20px;">
+      <md-input-container>
+        <md-icon md-svg-icon="action:ic_perm_identity_24px"></md-icon>
+        <input type="text" ng-model="ptc.credentials.profile.name"
+               placeholder="name" aria-label="pet name"/>
+      </md-input-container>
+
+
+      <md-input-container>
+        <md-icon md-svg-icon="action:ic_perm_identity_24px"></md-icon>
+        <input type="text" ng-model="ptc.credentials.profile.age"
+               placeholder="age" aria-label="age"/>
+      </md-input-container>
+
+       <md-input-container>
+        <md-icon md-svg-icon="action:ic_perm_identity_24px"></md-icon>
+        <input type="text" ng-model="ptc.credentials.profile.profilePhoto"
+               placeholder="your pet image url" aria-label="image"/>
+      </md-input-container>
+
+      <md-input-container>
+        <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
+        <input type="text" ng-model="ptc.credentials.profile.type"
+               placeholder="type" aria-label="type"/>
+      </md-input-container>
+
+      
+
+      <md-button class="md-raised md-primary"
+                 ng-click="ptc.create()">Add Pet
+      </md-button>
+
+    </form>
+    
+  </md-whiteframe>
+  <span flex></span>
+</md-content>

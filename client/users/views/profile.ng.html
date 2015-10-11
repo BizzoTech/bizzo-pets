@@ -1,0 +1,67 @@
+<div ng-cloak flex="80">
+  <md-content class="md-padding" flex="80">
+    <md-tabs md-dynamic-height md-border-bottom>
+      <md-tab label="photo">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">profile image</h1>
+          <img ng-src="{{$root.currentUser.profile.profilePhoto}}" alt="Xe tập đi" />
+        </md-content>
+      </md-tab>
+
+      <md-tab label="basic information">
+        <md-content class="md-padding">
+          <p>
+           <div>{{$root.currentUser.profile.name}}</div><br>
+           <div>{{$root.currentUser.profile.age}}</div>
+           <div>{{$root.currentUser.email}}</div>
+          </p>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="about me">
+        <md-content class="md-padding">
+          <p>
+           <div>{{$root.currentUser.profile.about}}</div>
+          </p>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="my pets">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">my pets</h1>
+          <p>
+            <md-button ui-sref="addPet" ng-show="$root.currentUser">add pet</md-button>
+          </p>
+                    
+          <md-list  ng-cloak>
+            <md-subheader class="md-no-sticky">my pets</md-subheader>
+            <md-list-item ng-repeat="pet in pc.userPets" >
+              <a href="pet/{{pet._id}}">
+                <img alt="{{ pet.profile.name }}" ng-src="{{ pet.profile.profilePhoto }}" class="md-avatar" />
+              </a>
+              <p>{{ pet.profile.name }}</p>
+             
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </md-tab>
+
+
+      <md-tab label="family pets">
+        <md-content class="md-padding">
+          
+          <md-list  ng-cloak>
+            <md-subheader class="md-no-sticky">Family Pets</md-subheader>
+            <md-list-item ng-repeat="pet in pc.familyPets" >
+              <img alt="{{ pet.profile.name }}" ng-src="{{ pet.profile.profilePhoto }}" class="md-avatar" />
+              <p>{{ pet.profile.name }}</p>
+             
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+
+  </md-content>
+</div>

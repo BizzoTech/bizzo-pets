@@ -1,0 +1,70 @@
+<div ng-cloak flex="80">
+  <md-content class="md-padding" flex="80">
+    <md-tabs md-dynamic-height md-border-bottom>
+      
+      <md-tab label="photo">
+        <md-content class="md-padding">
+          <h1 class="md-display-2">profile image</h1>
+          <img ng-src="{{pvc.pet.profile.profilePhoto}}" alt="Xe tập đi" />
+        </md-content>
+      </md-tab>
+
+      <md-tab label="basic information">
+        <md-content class="md-padding">
+          <p>
+           <div>{{pvc.pet.profile.name}}</div><br>
+           <div>{{pvc.pet.profile.age}}</div>
+           <div>{{pvc.pet.profile.type}}</div>
+          </p>
+        </md-content>
+      </md-tab>
+
+      <md-tab label="Photos">
+        <md-content class="md-padding">
+          <md-grid-list
+                md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
+                md-row-height-gt-md="1:1" md-row-height="2:2"
+                md-gutter="12px" md-gutter-gt-sm="8px" >
+            
+            <md-grid-tile ng-repeat="image in pvc.pet.profile.photos"
+                md-rowspan="3" >
+              <a href="/image/{{$root.pet._id}}/{{image.id}}">
+                <img ng-src="{{image.src}}" alt="Xe tập đi" />
+              </a>
+              
+            </md-grid-tile>
+
+          </md-grid-list>
+
+          <form layout="column"   style="margin-top : 20px;">
+            <md-input-container>
+              <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
+              <input type="text" ng-model="pvc.image.src"
+                     placeholder="Image" aria-label="Image"/>
+            </md-input-container>
+
+            
+            <md-button ng-show="pvc.isFamilyMember()" class="md-raised md-primary"
+                       ng-click="pvc.addImage()">Add Image
+            </md-button>
+
+          </form>
+
+        </md-content>
+      </md-tab>
+
+    </md-tabs>
+
+    Your Rate : <rating score="userRate" max="5" ></rating>
+
+
+    Rate Average : <rating score="rateAVG()" max="5" ></rating>
+
+    <md-switch ng-show="pvc.isOwner()" ng-model="pvc.pet.forSale" aria-label="For Sale">
+      For Sale
+    </md-switch>
+
+  </md-content>
+
+
+</div>

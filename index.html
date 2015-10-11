@@ -1,0 +1,133 @@
+<head>
+  <title>pets</title>
+  <base href="/">
+  <link type="text/css" rel="stylesheet" href="/app.css" />
+</head>
+
+
+
+<body ng-app="pets">
+  
+  <div ng-controller="HeaderController" ng-cloak>
+    <md-toolbar class="md-menu-toolbar">
+      <div layout="row">
+        <md-toolbar-filler layout layout-align="center center">
+          <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
+            <md-icon md-svg-icon="action:ic_reorder_24px"></md-icon>
+          </md-button>
+        </md-toolbar-filler>
+
+        <div>
+          <md-button ui-sref="home"><span class="md-title">Home</span></md-button>
+          <md-menu-bar>
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                shop
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="ctrl.sampleAction('share', $event)">
+                      new pets
+                  </md-button>
+                </md-menu-item>
+
+                <md-menu-divider></md-menu-divider>
+
+                <md-menu-item>
+                  <md-button ng-click="ctrl.sampleAction('share', $event)">
+                    accessories
+                  </md-button>
+                </md-menu-item>
+
+              </md-menu-content>
+            </md-menu>
+
+
+            <md-menu>
+              <button ng-click="$mdOpenMenu()">
+                challenge
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-click="ctrl.sampleAction('share', $event)">
+                    check pet scores
+                  </md-button>
+                </md-menu-item>
+
+                <md-menu-divider></md-menu-divider>
+
+                <md-menu-item>
+                  <md-button ng-click="ctrl.sampleAction('share', $event)">
+                    join 
+                  </md-button>
+                </md-menu-item>
+
+              </md-menu-content>
+            </md-menu>
+
+            <md-menu>
+              <button  ng-hide="$root.currentUser" ng-click="$mdOpenMenu()">
+                join us 
+              </button>
+              <md-menu-content>
+                <md-menu-item>
+                  <md-button ng-href="/login">
+                    sign in 
+                  </md-button>
+                </md-menu-item>
+
+                <md-menu-divider></md-menu-divider>
+
+                <md-menu-item>
+                  <md-button ng-href="/register" >
+                    sign up  
+                  </md-button>
+                </md-menu-item>
+              </md-menu-content>
+            </md-menu>
+
+                
+
+            <!-- <md-menu>
+
+              <md-button class="md-icon-button" aria-label="Favorite">
+                <md-icon md-svg-icon="img/icons/favorite.svg" style="color: greenyellow;"></md-icon>
+              </md-button>
+
+            </md-menu> -->
+
+           </md-menu-bar>
+
+        </div>
+   
+      </div>
+    </md-toolbar>
+
+    <md-sidenav md-component-id="left" class="md-sidenav-left md-whiteframe-z2">
+      <md-toolbar class="md-theme-light">
+        <h1 class="md-toolbar-tools">{{currentUser.profile.name}}</h1>
+      </md-toolbar>
+      <md-content layout="column" ng-controller="LeftNavCtrl" layout-padding>
+        <form>
+          <md-input-container>
+            <label for="search">Search</label>
+            <input type="text" id="search"
+                   ng-model="keyword" md-autofocus>
+          </md-input-container>
+        </form>
+        <md-button ui-sref="profile" class="md-primary">
+          Profile
+        </md-button>
+        <md-button ui-sref="family" class="md-primary">
+          Family
+        </md-button>
+
+        <md-button ng-href="/logout" ng-show="$root.currentUser" class="md-primary">bye bye</md-button>
+        
+      </md-content>
+    </md-sidenav>
+  </div>
+
+  <div ui-view flex-gt-sm layout-gt-sm="row" layout-align="center"></div>
+
+</body>
