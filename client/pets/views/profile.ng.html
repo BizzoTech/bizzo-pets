@@ -2,39 +2,57 @@
   <md-content class="md-padding" flex="80">
     <md-tabs md-dynamic-height md-border-bottom>
       
-      <md-tab label="photo">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">profile image</h1>
-          <img ng-src="{{pvc.pet.profile.profilePhoto}}" alt="Xe tập đi" />
-        </md-content>
+      <md-tab label="pet profile">
+       <md-content class="md-padding">
+          <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;"  ng-cloak >
+            <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
+              <span>
+                 <img ng-src="{{pvc.pet.profile.profilePhoto}}" alt="Xe tập đi" height="450px" width="350"/>
+              </span>
+             </md-whiteframe>
+
+            <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
+              <span><div>
+              <p>
+                <h2>{{pvc.pet.profile.name}}</h2>&nbsp;&nbsp;&nbsp;
+                <p> {{pvc.pet.profile.age}} years </p>&nbsp;&nbsp;&nbsp;
+                 {{pvc.pet.profile.type}}
+              </p></div>
+               <div>
+                <md-button><h4> Your Rate :</h4> <rating score="userRate" max="5" ></rating></md-button>
+
+
+                 <md-button><h4>Rate Average :</h4> <rating score="pvc.pet.rateAVG()" max="5" ></rating></md-button>
+
+                 <md-switch ng-show="pvc.isOwner()" ng-model="pvc.pet.forSale" aria-label="For Sale">
+                  For Sale
+                 </md-switch>
+
+    
+
+                 <md-button><h5> Distance : <distance origin="$root.currentUser.profile.zipCode" destination="pvc.pet.zipCode()"></distance> </h5></md-button>
+
+               </div>
+
+              </span>
+             </md-whiteframe>
+
+
+          </div>
+
+
+       </md-content>
       </md-tab>
 
-      <md-tab label="basic information">
-        <md-content class="md-padding">
-          <p>
-           <div>{{pvc.pet.profile.name}}</div><br>
-           <div>{{pvc.pet.profile.age}}</div>
-           <div>{{pvc.pet.profile.type}}</div>
-          </p>
-        </md-content>
-      </md-tab>
+
+
+
 
       <md-tab label="Photos">
         <md-content class="md-padding">
-          <md-grid-list
-                md-cols-sm="1" md-cols-md="2" md-cols-gt-md="6"
-                md-row-height-gt-md="1:1" md-row-height="2:2"
-                md-gutter="12px" md-gutter-gt-sm="8px" >
-            
-            <md-grid-tile ng-repeat="image in pvc.pet.profile.photos"
-                md-rowspan="3" >
-              <a href="/image/{{$root.pet._id}}/{{image.id}}">
-                <img ng-src="{{image.src}}" alt="Xe tập đi" />
-              </a>
-              
-            </md-grid-tile>
-
-          </md-grid-list>
+          <h2> 
+            <div>{{pvc.pet.profile.name}}</div>
+          </h2>
 
           <form layout="column"   style="margin-top : 20px;">
             <md-input-container>
@@ -49,24 +67,33 @@
             </md-button>
 
           </form>
+         
+          <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;"  ng-cloak >
+            <md-whiteframe ng-repeat="image in pvc.pet.profile.photos" class="md-whiteframe-24dp" flex="25" layout layout-align="center center"  >
+              <span>
+                <a href="/image/{{$root.pet._id}}/{{image.id}}">
+                   <img ng-src="{{image.src}}" alt="Xe tập đi" flex="50" width="220" height="160"/>
+                </a>
+               
+              </span>
+              
+            </md-whiteframe>
+          </div>
+
+
+          
+
+
+          
+
 
         </md-content>
       </md-tab>
 
+
     </md-tabs>
 
-    Your Rate : <rating score="userRate" max="5" ></rating>
-
-
-    Rate Average : <rating score="pvc.pet.rateAVG()" max="5" ></rating>
-
-    <md-switch ng-show="pvc.isOwner()" ng-model="pvc.pet.forSale" aria-label="For Sale">
-      For Sale
-    </md-switch>
-
     
-
-    <h1> Distance : <distance origin="$root.currentUser.profile.zipCode" destination="pvc.pet.zipCode()"></distance> </h1>
 
   </md-content>
 
