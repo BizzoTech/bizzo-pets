@@ -12,17 +12,23 @@
              </md-whiteframe>
 
             <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
-              <span><div>
-              <p>
-                <h2>{{pvc.pet.profile.name}}</h2>&nbsp;&nbsp;&nbsp;
-                <p> {{pvc.pet.profile.age}} years </p>&nbsp;&nbsp;&nbsp;
-                 {{pvc.pet.profile.type}}
-              </p></div>
-               <div>
-                <md-button><h4> Your Rate :</h4> <rating score="userRate" max="5" ></rating></md-button>
+              <span>
+
+               <h2 style="text-align:center;">{{pvc.pet.profile.name}}</h2>
 
 
-                 <md-button><h4>Rate Average :</h4> <rating score="pvc.pet.rateAVG()" max="5" ></rating></md-button>
+
+              <div style="background-color:#BFA6BF;text-align:left;">
+                <p>
+                   <h3 style="color:#FF4D94;"> &nbsp;Age :</h3> {{pvc.pet.profile.age}} years
+                   <h3  style="color:#FF4D94;">&nbsp;Type :</h3>{{pvc.pet.profile.type}}
+                </p>
+              </div>
+               <div style="backgroun-color:#BFA6BF;">
+                <h4> Your Rate :</h4> <rating score="userRate" max="5" ></rating>
+
+
+                 <h4>Rate Average :</h4> <rating score="pvc.pet.rateAVG()" max="5" ></rating>
 
                  <md-switch ng-show="pvc.isOwner()" ng-model="pvc.pet.forSale" aria-label="For Sale">
                   For Sale
@@ -30,7 +36,7 @@
 
     
 
-                 <md-button><h5> Distance : <distance origin="$root.currentUser.profile.zipCode" destination="pvc.pet.zipCode()"></distance> </h5></md-button>
+                 <h5> Distance : <distance origin="$root.currentUser.profile.zipCode" destination="pvc.pet.zipCode()"></distance> </h5>
 
                </div>
 
