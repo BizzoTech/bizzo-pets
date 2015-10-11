@@ -1,44 +1,35 @@
 <md-content class="md-padding" flex="80">
-	
+  <div layout="row" layout-padding layout-wrap layout-fill  style="padding-bottom: 32px;"  ng-cloak >
+    <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
+      <span>
+        <img ng-src="{{pic.image.src}}" alt="Xe tập đi" height="450px" width="350" />
+      </span>
+    </md-whiteframe>
 
+    <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
+      <span>
+
+      <div ng-repeat="comment in pic.image.comments track by comment.id">
+           
+           <div><md-button > By {{comment.userName}}</md-button></div>
+           <div>{{comment.text}}</div>
+      </div>
+
+      <form layout="column"   style="margin-top : 200px;">
+         <md-input-container>
+           <md-icon md-svg-icon="communication:ic_message_24px"></md-icon>
+           <input type="textarea" ng-model="pic.comment.text"
+           placeholder="Comment" aria-label="Comment"/>
+         </md-input-container>
+
+
+        <md-button class="md-raised md-primary"
+         ng-click="pic.comment()">Comment
+         </md-button>
+
+      </form>
         
-          <div layout="row" layout-padding layout-wrap layout-fill style="padding-bottom: 32px;"  ng-cloak >
-            <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
-              <span>
-                <img ng-src="{{pic.image.src}}" alt="Xe tập đi" height="450px" width="350" />
-              </span>
-            </md-whiteframe>
-
-            <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
-              <span>
-
-              <div ng-repeat="comment in pic.image.comments track by comment.id">
-                   
-                   <div><md-button > By {{comment.userName}}</md-button></div>
-                   <div>{{comment.text}}</div>
-              </div>
-
-              <form layout="column"   style="margin-top : 200px;">
-                 <md-input-container>
-                   <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
-                   <input type="textarea" ng-model="pic.comment.text"
-                   placeholder="Comment" aria-label="Comment"/>
-                 </md-input-container>
-
-      
-                <md-button class="md-raised md-primary"
-                 ng-click="pic.comment()">Comment
-                 </md-button>
-
-              </form>
-                
-              </span>
-            </md-whiteframe>
-          </div>
-        
-    
-
-
-
-
+      </span>
+    </md-whiteframe>
+  </div>
 </md-content>

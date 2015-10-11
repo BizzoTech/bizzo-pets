@@ -11,22 +11,25 @@
               </span>
              </md-whiteframe>
 
-            <md-whiteframe class="md-whiteframe-24dp" flex="40" layout layout-align="center center"  >
-              <span><div>
-              <p>
+            <md-whiteframe class="md-whiteframe-24dp" flex="40" layout="column" layout-align="center"  >
+              <div>
+             
                 <h2>{{pvc.pet.profile.name}}</h2>&nbsp;&nbsp;&nbsp;
                 <p> {{pvc.pet.profile.age}} years </p>&nbsp;&nbsp;&nbsp;
-                 {{pvc.pet.profile.type}}
-              </p></div>
+                 <p>{{pvc.pet.profile.type}}</p>
+              </div>
+
                <div>
-                <md-button><h4> Your Rate :</h4> <rating score="userRate" max="5" ></rating></md-button>
-
-
-                 <md-button><h4>Rate Average :</h4> <rating score="pvc.pet.rateAVG()" max="5" ></rating></md-button>
-
-                 <md-switch ng-show="pvc.isOwner()" ng-model="pvc.pet.forSale" aria-label="For Sale">
+               <div class="md-button">
+                  <h4> Your Rate :</h4> <rating score="userRate" max="5" ></rating>
+                </div>
+                <div class="md-button">
+                  <h4>Rate Average :</h4> <rating score="pvc.pet.rateAVG()" max="5" ></rating>
+                </div>
+                
+                <md-switch ng-show="pvc.isOwner()" ng-model="pvc.pet.forSale" aria-label="For Sale">
                   For Sale
-                 </md-switch>
+                </md-switch>
 
     
 
@@ -34,7 +37,7 @@
 
                </div>
 
-              </span>
+              
              </md-whiteframe>
 
 
@@ -54,15 +57,15 @@
             <div>{{pvc.pet.profile.name}}</div>
           </h2>
 
-          <form layout="column"   style="margin-top : 20px;">
+          <form layout="column" ng-show="pvc.isFamilyMember()" style="margin-top : 20px;">
             <md-input-container>
-              <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
+              <md-icon md-svg-icon="image:ic_photo_24px"></md-icon>
               <input type="text" ng-model="pvc.image.src"
                      placeholder="Image" aria-label="Image"/>
             </md-input-container>
 
             
-            <md-button ng-show="pvc.isFamilyMember()" class="md-raised md-primary"
+            <md-button  class="md-raised md-primary"
                        ng-click="pvc.addImage()">Add Image
             </md-button>
 

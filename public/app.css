@@ -101,3 +101,11 @@ a.md-button.md-primary, .md-button.md-primary {
     height: 500px;
     margin: 40px;
 }
+
+.layout-align-center {
+    text-align: center;
+}
+
+md-switch {
+    justify-content : center;
+}
