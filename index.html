@@ -1,5 +1,5 @@
 <head>
-  <title>pets</title>
+  <title>Bizzo Pets</title>
   <base href="/">
   <link type="text/css" rel="stylesheet" href="/app.css" />
 </head>
@@ -12,7 +12,7 @@
     <md-toolbar class="md-menu-toolbar">
       <div layout="row">
         <md-toolbar-filler layout layout-align="center center">
-          <md-button class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
+          <md-button ng-show="$root.currentUser" class="md-icon-button" aria-label="Settings" ng-click="openLeftMenu()">
             <md-icon md-svg-icon="action:ic_reorder_24px"></md-icon>
           </md-button>
         </md-toolbar-filler>
@@ -22,12 +22,12 @@
           <md-menu-bar>
             <md-menu>
               <button ng-click="$mdOpenMenu()">
-                shop
+                Shop
               </button>
               <md-menu-content>
                 <md-menu-item>
                   <md-button ng-click="ctrl.sampleAction('share', $event)">
-                      new pets
+                      New Pets
                   </md-button>
                 </md-menu-item>
 
@@ -35,7 +35,7 @@
 
                 <md-menu-item>
                   <md-button ng-click="ctrl.sampleAction('share', $event)">
-                    accessories
+                    Accessories
                   </md-button>
                 </md-menu-item>
 
@@ -45,7 +45,7 @@
 
             <md-menu>
               <button ng-click="$mdOpenMenu()">
-                challenge
+                Contests
               </button>
               <md-menu-content>
                 <md-menu-item>
@@ -67,12 +67,12 @@
 
             <md-menu>
               <button  ng-hide="$root.currentUser" ng-click="$mdOpenMenu()">
-                join us 
+                Join Us 
               </button>
               <md-menu-content>
                 <md-menu-item>
                   <md-button ng-href="/login">
-                    sign in 
+                    Sign In 
                   </md-button>
                 </md-menu-item>
 
@@ -80,7 +80,7 @@
 
                 <md-menu-item>
                   <md-button ng-href="/register" >
-                    sign up  
+                    Sign Up  
                   </md-button>
                 </md-menu-item>
               </md-menu-content>
@@ -118,8 +118,11 @@
         <md-button ui-sref="profile" class="md-primary">
           Profile
         </md-button>
-        <md-button ui-sref="family" class="md-primary">
+        <md-button ng-show="$root.currentUser.profile.family" ui-sref="family" class="md-primary">
           Family
+        </md-button>
+        <md-button ng-hide="$root.currentUser.profile.family" ui-sref="createFamily" class="md-primary">
+          Create Family
         </md-button>
 
         <md-button ng-href="/logout" ng-show="$root.currentUser" class="md-primary">bye bye</md-button>
