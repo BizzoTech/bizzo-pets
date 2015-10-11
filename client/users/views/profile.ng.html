@@ -39,9 +39,9 @@
               <img ng-src="{{$root.currentUser.profile.profilePhoto}}"  class="md-card-image" alt="Xe tập đi" />
 
                <md-card-content>
-                 <div><h2 class="md-title">about me</h2></div>
+                 <div><md-button><h2 class="md-title">about me</h2></md-button></div>
                 <p>
-                 <div>
+                 <div style="background-color:#BFA6BF;">
                   <div>{{$root.currentUser.profile.name}}</div>
                   <div>{{$root.currentUser.profile.age}}</div>
                   <div>{{$root.currentUser.email}}</div>
@@ -71,10 +71,11 @@
             <md-whiteframe ng-repeat="pet in pc.userPets" class="md-whiteframe-24dp" flex="25" layout layout-align="center center"  >
               <span>
                 <a href="pet/{{pet._id}}">
-                  <img alt="{{ pet.profile.name }}" ng-src="{{ pet.profile.profilePhoto }}" class="md-avatar" flex="50" width="220" height="195"/>
+                  <img alt="{{ pet.profile.name }}" ng-src="{{ pet.profile.profilePhoto }}" class="md-avatar" flex="50" width="220" height="155"/>
                 </a>
-                 <p>{{ pet.profile.name }}</p>
+                <h4> <p>{{ pet.profile.name }}</p></h4>
               </span>
+              
             </md-whiteframe>
           </div>
         </md-content>
