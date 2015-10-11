@@ -3,30 +3,7 @@
      
      <md-tabs md-dynamic-height md-border-bottom>
       
-      <!--<md-tab label="photo">
-        <md-content class="md-padding">
-          <h1 class="md-display-2">profile image</h1>
-          <img ng-src="{{$root.currentUser.profile.profilePhoto}}" alt="Xe tập đi" />
-        </md-content>
-      </md-tab>
-
-      <md-tab label="basic information">
-        <md-content class="md-padding">
-          <p>
-           <div>{{$root.currentUser.profile.name}}</div><br>
-           <div>{{$root.currentUser.profile.age}}</div>
-           <div>{{$root.currentUser.email}}</div>
-          </p>
-        </md-content>
-      </md-tab>
-
-      <md-tab label="about me">
-        <md-content class="md-padding">
-          <p>
-           <div>{{$root.currentUser.profile.about}}</div>
-          </p>
-        </md-content>
-      </md-tab>-->
+      
 
       <md-tab label="profile">
         <md-content class="md-padding">
@@ -71,7 +48,7 @@
             <md-whiteframe ng-repeat="pet in pc.userPets" class="md-whiteframe-24dp" flex="25" layout layout-align="center center"  >
               <span>
                 <a href="pet/{{pet._id}}">
-                  <img alt="{{ pet.profile.name }}" ng-src="{{ pet.profile.profilePhoto }}" class="md-avatar" flex="50" width="220" height="155"/>
+                  <img alt="{{ pet.profile.name }}" ng-src="{{ pet.profile.profilePhoto }}" class="md-avatar" flex="50" width="220" height="150"/>
                 </a>
                 <h4> <p>{{ pet.profile.name }}</p></h4>
               </span>
