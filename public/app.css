@@ -72,3 +72,12 @@ a.md-button.md-primary, .md-button.md-primary {
     overflow: hidden;
     transition: box-shadow 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s, background-color 0.4s cubic-bezier(0.25, 0.8, 0.25, 1) 0s;
 }
+
+.md-layout-row > .flex-25, .md-layout-row > .flex-25 {
+    flex: 0 0 25%;
+    max-width: 25%;
+    max-height: 10%;
+    margin: 10px;
+    width: 200px;
+    height: 200px;
+}
