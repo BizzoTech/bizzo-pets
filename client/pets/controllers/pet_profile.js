@@ -71,5 +71,7 @@ angular.module("pets").controller("PetProfileCtrl", ['$scope', '$meteor', '$stat
         
       }
     });
+
+    
   }
 ]);

@@ -5,8 +5,8 @@
       <img ng-src="{{pet.profile.profilePhoto}}" class="md-avatar" alt="{{pet.profile.name}}" />
       <div class="md-list-item-text"  layout="column">
         <h3>{{ pet.profile.name }}</h3>
-        <h4>Type : {{ pet.profile.type }}</h4>
-        <p>Age : {{ pet.profile.age }}</p>
+        <h4>Type : {{ pet.profile.type }} - Age : {{ pet.profile.age }}</h4>
+        <p>Distance : <distance origin="$root.currentUser.profile.zipCode" destination="pet.zipCode()"></distance></p>
       </div>
       <rating class="md-secondary" score="pet.rateAVG()" max="5" ></rating>
     </md-list-item>

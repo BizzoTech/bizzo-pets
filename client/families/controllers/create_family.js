@@ -4,6 +4,7 @@ angular.module("pets").controller("FamilyCreateCtrl", ['$meteor', '$state', "$ro
     self.family = {
       name : "",
       admin : $rootScope.currentUser._id,
+      zipCode : $rootScope.currentUser.profile.zipCode,
     }
     
     self.create = function () {

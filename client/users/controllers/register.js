@@ -9,7 +9,8 @@ angular.module("pets").controller("RegisterCtrl", ['$meteor', '$state',
         name : '',
         age: '',
         profilePhoto :'',
-        about:''
+        about:'',
+        zipCode : ''
       }
     };
  

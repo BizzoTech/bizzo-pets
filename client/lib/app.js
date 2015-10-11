@@ -92,3 +92,33 @@ angular.module("pets").directive("rating", function() {
 
   return directive;
 });
+
+
+angular.module("pets").directive("distance",['$meteor', function($meteor) {
+  var directive = { };
+  directive.restrict = 'AE';
+
+  directive.scope = {
+    origin: '=origin',
+    destination: '=destination'
+  };
+
+  directive.template = '<span class="distance">' +
+                       '  {{distance}} ' +
+                       '</span>';
+
+  directive.link = function(scope, elements, attr) {
+    scope.$watch('origin', function(newValue, oldValue) {
+      if (newValue !== null && newValue !== undefined) {
+        $meteor.call('calcDistance', scope.origin, scope.destination).then(function(distance){
+          scope.distance = distance.text;
+        },function(error){
+          scope.distance = "Provide valid zip codes to view distance";
+        });
+      }
+    });
+    
+  };
+
+  return directive;
+}]);
