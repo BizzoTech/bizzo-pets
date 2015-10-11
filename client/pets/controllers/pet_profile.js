@@ -29,14 +29,6 @@ angular.module("pets").controller("PetProfileCtrl", ['$scope', '$meteor', '$stat
 
   	var rate = false;
 
-  	$scope.rateAVG = function(){
-  		var total = 0;
-  		self.pet.profile.rates.forEach(function(r){
-	  		total += r.score;
-	  	});
-	  	return total / self.pet.profile.rates.length ;
-  	}
-
   	self.pet.profile.rates.forEach(function(r){
   		if(r.userId == $rootScope.currentUser._id){
   			rate = r;
