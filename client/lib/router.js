@@ -71,8 +71,9 @@ angular.module('pets').config(['$urlRouterProvider', '$stateProvider', '$locatio
       .state('logout', {
         url: '/logout',
         resolve: {
-          "logout": ['$meteor', '$state', function($meteor, $state) {
+          "logout": ['$meteor', '$state', '$mdSidenav', function($meteor, $state, $mdSidenav) {
             return $meteor.logout().then(function(){
+              $mdSidenav('left').toggle();
               $state.go('home');
             }, function(err){
               console.log('logout error - ', err);
