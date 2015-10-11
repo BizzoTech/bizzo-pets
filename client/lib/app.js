@@ -69,7 +69,7 @@ angular.module("pets").directive("rating", function() {
       scope.stars = [ ];
       for (idx = 0; idx < scope.max; idx += 1) {
         scope.stars.push({
-          full: scope.score > idx
+          full: scope.score !== null && scope.score !== undefined && scope.score > idx
         });
       }
     };
@@ -81,9 +81,7 @@ angular.module("pets").directive("rating", function() {
       return starIcon;
     };
     scope.$watch('score', function(newValue, oldValue) {
-      if (newValue !== null && newValue !== undefined) {
-        scope.updateStars();
-      }
+      scope.updateStars();
     });
     scope.setRating = function(idx) {
       scope.score = idx + 1;

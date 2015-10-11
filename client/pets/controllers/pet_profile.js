@@ -27,7 +27,6 @@ angular.module("pets").controller("PetProfileCtrl", ['$scope', '$meteor', '$stat
   		self.image.src = "";
   	}
 
-  	$scope.userRate = 0;
   	var rate = false;
 
   	$scope.rateAVG = function(){
@@ -45,12 +44,9 @@ angular.module("pets").controller("PetProfileCtrl", ['$scope', '$meteor', '$stat
   		}
   	})
 
-  	console.log(rate);
-
+  	
   	$scope.$watch('userRate', function(newValue, oldValue) {
-  		console.log(rate);
-      if (newValue !== null && newValue !== undefined) {
-        //alert("Rate Changed");
+  	  if (newValue !== null && newValue !== undefined) {
         if(rate){
         	rate.score = newValue;
         }else{
