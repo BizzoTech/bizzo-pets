@@ -33,7 +33,7 @@ angular.module("pets").controller("PetProfileCtrl", ['$scope', '$meteor', '$stat
   	$scope.rateAVG = function(){
   		var total = 0;
   		self.pet.profile.rates.forEach(function(r){
-	  		total += rate.score;
+	  		total += r.score;
 	  	});
 	  	return total / self.pet.profile.rates.length ;
   	}

@@ -92,6 +92,12 @@ angular.module('pets').config(['$urlRouterProvider', '$stateProvider', '$locatio
         templateUrl: 'client/families/views/view.ng.html',
         controller: 'FamilyViewCtrl',
         controllerAs: 'fv'
+      })
+      .state('shop', {
+        url: '/shop',
+        templateUrl: 'client/shop/views/shop.ng.html',
+        controller: 'ShopCtrl',
+        controllerAs: 'sc'
       });
 
       

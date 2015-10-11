@@ -1,0 +1,15 @@
+<md-content flex="80">
+  <md-list>
+    <md-subheader class="md-no-sticky">Pets For Sale</md-subheader>
+    <md-list-item class="md-3-line" ng-click="sc.navigateToPet(pet._id)" ng-repeat="pet in sc.petsForSale">
+      <img ng-src="{{pet.profile.profilePhoto}}" class="md-avatar" alt="{{pet.profile.name}}" />
+      <div class="md-list-item-text"  layout="column">
+        <h3>{{ pet.profile.name }}</h3>
+        <h4>Type : {{ pet.profile.type }}</h4>
+        <p>Age : {{ pet.profile.age }}</p>
+      </div>
+      <rating class="md-secondary" score="pet.rateAVG()" max="5" ></rating>
+    </md-list-item>
+    
+  </md-list>
+</md-content>
