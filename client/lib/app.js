@@ -16,6 +16,9 @@ angular.module("pets").controller('AppCtrl', function($scope) {
   $scope.imagePath = 'images/groupofpets.jpg';
 });
 
+angular.module("pets").controller('proCtrl', function($scope) {
+});
+
 
 angular.module("pets").controller('HeaderController', function($scope, $mdSidenav) {
   $scope.openLeftMenu = function() {
