@@ -9,11 +9,6 @@ angular.module('pets').config(['$urlRouterProvider', '$stateProvider', '$locatio
         templateUrl: 'index.ng.html',
         controller: 'HomeCtrl',
         controllerAs: 'h',
-        resolve: {
-          currentUser: ["$meteor", function($meteor){
-            return $meteor.requireUser();
-          }]
-        }
       })
       .state('addPet', {
         url: '/addpet',
@@ -85,7 +80,12 @@ angular.module('pets').config(['$urlRouterProvider', '$stateProvider', '$locatio
         url: '/createfamily',
         templateUrl: 'client/families/views/create.ng.html',
         controller: 'FamilyCreateCtrl',
-        controllerAs: 'fc'
+        controllerAs: 'fc',
+        resolve: {
+          currentUser: ["$meteor", function($meteor){
+            return $meteor.requireUser();
+          }]
+        }
       })
       .state('family', {
         url: '/family',

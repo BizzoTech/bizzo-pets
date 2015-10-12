@@ -34,12 +34,11 @@ angular.module("pets").controller('LeftNavCtrl', ['$scope', '$rootScope', '$mete
   }
 ]);
 
-angular.module("pets").controller("HomeCtrl", ['$meteor', '$state', 'currentUser',
-  function ($meteor, $state, currentUser) {
-    //user = $meteor.requireUser();
-    this.currentUser = currentUser;
-    var userFamilyId = currentUser.profile.family;
-    if(userFamilyId != undefined){
+angular.module("pets").controller("HomeCtrl", ['$meteor', '$state', '$rootScope',
+  function ($meteor, $state, $rootScope) {
+    var currentUser = $rootScope.currentUser;
+    if(currentUser && currentUser.profile.family){
+      var userFamilyId = currentUser.profile.family;
       this.family = $meteor.object(Families, userFamilyId, false);;
     }else{
       this.family = false;
