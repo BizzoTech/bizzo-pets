@@ -26,11 +26,8 @@ angular.module("pets").controller("AddPetCtrl", ['$meteor', '$state','$rootScope
         }
       ];
       pm.credentials.profile.rates = [];
-      Pets.insert(pm.credentials, function(){
-        
-          $state.go('home');
-       
-        
+      Pets.insert(pm.credentials, function(error, petId){
+        $state.transitionTo("petProfile", { petId: petId });
       });
     };
     
