@@ -12,14 +12,10 @@
                placeholder="name" aria-label="pet name"/>
       </md-input-container>
 
-
+      
+        <md-datepicker style="background: none;margin-bottom: 20px;" ng-model="ptc.credentials.profile.dateOfBirth" md-placeholder="Date Of Birth"></md-datepicker>
+      
       <md-input-container>
-        <md-icon md-svg-icon="action:ic_face_24px"></md-icon>
-        <input type="text" ng-model="ptc.credentials.profile.age"
-               placeholder="age" aria-label="age"/>
-      </md-input-container>
-
-       <md-input-container>
         <md-icon md-svg-icon="image:ic_photo_24px"></md-icon>
         <input type="text" ng-model="ptc.credentials.profile.profilePhoto"
                placeholder="your pet image url" aria-label="image"/>

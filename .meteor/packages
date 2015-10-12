@@ -28,3 +28,4 @@ cfs:gridfs
 danialfarid:ng-file-upload
 dburles:collection-helpers
 http
+mrt:moment

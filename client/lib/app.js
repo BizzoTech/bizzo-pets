@@ -12,19 +12,19 @@ angular.module('pets').config(['$mdIconProvider', function($mdIconProvider){
 
 }]);
 
-angular.module("pets").controller('AppCtrl', function($scope) {
+angular.module("pets").controller('AppCtrl',['$scope', function($scope) {
   $scope.imagePath = 'images/groupofpets.jpg';
-});
+}]);
 
-angular.module("pets").controller('proCtrl', function($scope) {
-});
+angular.module("pets").controller('proCtrl',['$scope', function($scope) {
+}]);
 
 
-angular.module("pets").controller('HeaderController', function($scope, $mdSidenav) {
+angular.module("pets").controller('HeaderController',['$scope','$mdSidenav', function($scope, $mdSidenav) {
   $scope.openLeftMenu = function() {
     $mdSidenav('left').toggle();
   };
-});
+}]);
 
 
 angular.module("pets").controller('LeftNavCtrl', ['$scope', '$rootScope', '$meteor', '$state', 

@@ -8,8 +8,11 @@ angular.module("pets").controller("FamilyViewCtrl", ['$meteor', '$state', "$root
     });
     self.members = members
 
-    self.isOwner = function(){
+    self.isAdmin = function(){
       return self.currentUser._id == self.family.admin;
+    }
+    self.canRemove = function(user_id){
+      return self.isAdmin() && self.currentUser._id != user_id;
     }
 
     self.member = {

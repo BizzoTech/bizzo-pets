@@ -19,7 +19,7 @@
                   </p>
                 </md-card-content>
                 <div class="md-actions" layout="row" layout-align="end center">
-                  <md-button ng-show="{{fv.isOwner()}}" ng-click="fv.remove(user._id)">Remove</md-button>
+                  <md-button ng-show="{{fv.canRemove(user._id)}}" ng-click="fv.remove(user._id)">Remove</md-button>
                 </div>
               </md-card>
             </div>

@@ -7,7 +7,7 @@ angular.module("pets").controller("AddPetCtrl", ['$meteor', '$state','$rootScope
     pm.credentials = {
       profile : {
         name : '',
-        age: '',
+        dateOfBirth: '',
         type:'',
         profilePhoto :'',
         about:''

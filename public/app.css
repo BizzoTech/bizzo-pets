@@ -113,3 +113,11 @@ md-switch {
 .comments {
     height: 900px;
 }
+
+.md-datepicker-button {
+    margin-left: -30px !important; 
+}
+
+.md-datepicker-input-container {
+    width: 750px;
+}
