@@ -28,7 +28,7 @@
             <div ng-show="fv.error" class="md-warn">
               <small>{{ fv.error }}</small>
             </div>
-            <form  ng-show="{{fv.isOwner()}}" layout="column"   style="margin-top : 20px;">
+            <form  ng-show="{{fv.isAdmin()}}" layout="column"   style="margin-top : 20px;">
               <md-input-container>
                 <md-icon md-svg-icon="content:ic_mail_24px"></md-icon>
                 <input type="email" ng-model="fv.member.email"
